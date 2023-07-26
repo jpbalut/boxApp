@@ -1,0 +1,154 @@
+[
+    {
+        "id": 1,
+        "categoryId": 1,
+        "name": "Plan Básico",
+        "description": "Plan 3 clases por semana",
+        "tags": "Domicilio",
+        "certified": true,
+        "rating": 5,
+        "pricePerHour": 100000,
+        "currency": {
+            "symbol": "$",
+            "code": "CLP",
+            "name": "Chilean Pesos"
+        },
+        "profilePicture": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/smartphones.png?alt=media&token=e2b564ea-5a7d-4fcc-be49-4e3cc25c1d5e"
+    },
+    {
+        "id": 2,
+        "categoryId": 1,
+        "name": "Plan Intermedio",
+        "description": "Plan 4 clases por semana",
+        "tags": "Domicilio",
+        "certified": true,
+        "rating": 3.5,
+        "pricePerHour": 120000,
+        "currency": {
+            "symbol": "$",
+            "code": "CLP",
+            "name": "Chilean Pesos"
+        },
+        "profilePicture": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/smartphones.png?alt=media&token=e2b564ea-5a7d-4fcc-be49-4e3cc25c1d5e"
+    },
+    {
+        "id": 3,
+        "categoryId": 1,
+        "name": "Plan Atleta",
+        "description": "Plan de 5 clases por semana",
+        "tags": "Domicilio",
+        "certified": true,
+        "rating": 2,
+        "pricePerHour": 5000,
+        "currency": {
+            "symbol": "$",
+            "code": "CLP",
+            "name": "Chilean Pesos"
+        }
+    },
+        {
+            "id": 4,
+            "categoryId": 1,
+            "name": "Plan Elite ",
+            "age": 32,
+            "gender": "male",
+            "description": "Plan clases ilimitadas",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 5,
+            "pricePerHour": 10000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            },
+            "profilePicture": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/smartphones.png?alt=media&token=e2b564ea-5a7d-4fcc-be49-4e3cc25c1d5e"
+        },
+        {
+            "id": 5,
+            "categoryId": 2,
+            "name": "Eyal Paseador Levy",
+            "age": 31,
+            "gender": "male",
+            "description": "Trabajo remoto, puedo pasearlos mientras estoy en reuniones",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 3.5,
+            "pricePerHour": 5000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            },
+            "profilePicture": "https://firebasestorage.googleapis.com/v0/b/ecommerce-app-c91d9.appspot.com/o/smartphones.png?alt=media&token=e2b564ea-5a7d-4fcc-be49-4e3cc25c1d5e"
+        },
+        {
+            "id": 6,
+            "categoryId": 3,
+            "name": "Cristobal Paseador Haye",
+            "age": 33,
+            "gender": "male",
+            "description": "Soy pesimo paseando perros, pero hago mi mejor esfuerzo",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 2,
+            "pricePerHour": 5000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            }
+        },
+        {
+            "id": 6,
+            "categoryId": 3,
+            "name": "Cristobal Paseador Haye",
+            "age": 33,
+            "gender": "male",
+            "description": "Soy pesimo paseando perros, pero hago mi mejor esfuerzo",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 2,
+            "pricePerHour": 5000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            }
+        },
+        {
+            "id": 6,
+            "categoryId": 4,
+            "name": "Cristobal Paseador Haye",
+            "age": 33,
+            "gender": "male",
+            "description": "Soy pesimo paseando perros, pero hago mi mejor esfuerzo",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 2,
+            "pricePerHour": 5000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            }
+        },
+        {
+            "id": 6,
+            "categoryId": 4,
+            "name": "Cristobal Paseador Haye",
+            "age": 33,
+            "gender": "male",
+            "description": "Soy pesimo paseando perros, pero hago mi mejor esfuerzo",
+            "tags": "Domicilio",
+            "certified": true,
+            "rating": 2,
+            "pricePerHour": 5000,
+            "currency": {
+                "symbol": "$",
+                "code": "CLP",
+                "name": "Chilean Pesos"
+            }
+        }
+
+    ]
