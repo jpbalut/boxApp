@@ -10,7 +10,6 @@ import useOrientation from '../../hooks/useOrientation';
 function ServicesCategories({ navigation }) {
   const orientation = useOrientation();
   const onSelectCategory = ({ categoryId, color }) => {
-    console.log(categoryId)
     navigation.navigate('Services', { categoryId, color });
   };
 

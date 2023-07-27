@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, ImageBackground } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import { Input } from '../../components';
 import SERVICES from '../../constants/data/services.json';
@@ -10,12 +11,13 @@ import { styles } from '../services/styles';
 
 const Services = ({ navigation, route }) => {
   const { categoryId, colors } = route.params;
+  const services = useSelector((state) => state.services.data);
   const [search, setSearch] = useState('');
   const [filteredServices, setfilteredServices] = useState([]);
   const [borderColor, setBorderColor] = useState(COLORS.primary);
 
-  const [isProductSelected, setIsProductSelected] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isServiceSelected, setIsServiceSelected] = useState(false);
+  const [selectedService, setSelectedService] = useState(null);
 
   const onHandlerBlur = () => {};
   const onHandlerChangeText = (text) => {
@@ -24,13 +26,13 @@ const Services = ({ navigation, route }) => {
   };
   const onHandlerFocus = () => {};
 
-  const filteredServicesByCategory = SERVICES.filter(
+  const filteredServicesByCategory = services.filter(
     (service) => service.categoryId === categoryId
   );
   const filterBySearch = (query) => {
     let updatedServiceList = [...filteredServicesByCategory];
-    updatedServiceList = updatedServiceList.filter((product) => {
-      return product.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
+    updatedServiceList = updatedServiceList.filter((service) => {
+      return service.name.toLowerCase().indexOf(query.toLowerCase()) !== -1;
     });
     setfilteredServices(updatedServiceList);
   };
@@ -39,18 +41,15 @@ const Services = ({ navigation, route }) => {
     setfilteredServices([]);
   };
 
-  const onHandleSelectService = (id) => {
-    setSelectedProduct({ id });
-    setIsProductSelected(!isProductSelected);
+  const onSelectService = ({ serviceId, name }) => {
+    console.log(serviceId)
+    navigation.navigate('ServiceDetails', { serviceId, name });
   };
-  const onHandleNavigateProd = () => {
-    setIsProductSelected(!isProductSelected);
-    setSelectedProduct(null);
-  };
+
   return (
     <View style={styles.container}>
-      {isProductSelected ? (
-        <ProductDetails selectedProduct={selectedProduct} />
+      {isServiceSelected ? (
+        <ProductDetails selectedProduct={selectedService} />
       ) : (
         <>
           <View style={styles.header}>
@@ -75,9 +74,9 @@ const Services = ({ navigation, route }) => {
           <FlatList
             style={styles.products}
             data={search.length > 0 ? filteredServices : filteredServicesByCategory}
-            renderItem={({ item }) => (
+            renderItem={({ item }) => ( 
               <TouchableOpacity
-                onPress={() => onHandleSelectService(item.id)}
+                onPress={() => onSelectService({serviceId: item.id, name: item.name})}
                 style={styles.productContainer}>
                 <ImageBackground
                   source={{ uri: item.image }}
@@ -92,7 +91,7 @@ const Services = ({ navigation, route }) => {
                   <Text
                     style={
                       styles.productPrice
-                    }>{`${item.currency.code}$${item.pricePerHour}`}</Text>
+                    }>{`${item.currency.code}$${item.price}`}</Text>
                 </View>
               </TouchableOpacity>
             )}

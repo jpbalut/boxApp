@@ -4,6 +4,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Services } from '../screens';
 import ServicesCategories from '../screens/serviceCategories';
+import ServiceDetails from '../screens/serviceDetails';
 import { COLORS } from '../themes';
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,22 @@ const ServicesNavigator = () => {
           ),
         })}
       />
+      <Stack.Screen
+        name="ServiceDetails"
+        component={ServiceDetails}
+        options={({ navigation, route }) => ({
+          headerStyle: {
+            backgroundColor: route.params.color,
+          },
+          headerLeft: () => (
+            <TouchableOpacity style={styles.goBack} onPress={() => navigation.goBack()}>
+              <Ionicons name="arrow-back-circle" size={30} color={COLORS.third} />
+            </TouchableOpacity>
+          ),
+          title: route.params.name,
+        })}
+      />
+
     </Stack.Navigator>
   );
 };
