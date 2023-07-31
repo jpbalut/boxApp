@@ -2,7 +2,6 @@ import { FlatList, SafeAreaView, Text, View } from 'react-native';
 
 import { styles } from './styles';
 import { CategoryItem } from '../../components';
-import CATEGORIES from '../../constants/data/categories.json';
 import ORIENTATION from '../../constants/data/orientation';
 import useOrientation from '../../hooks/useOrientation';
 

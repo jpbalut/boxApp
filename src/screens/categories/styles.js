@@ -17,4 +17,9 @@ export const styles = StyleSheet.create({
   categoryItemLandscape: {
     height: 100,
   },
+  loaderContainer:{
+    flex:1,
+    justifyContent: 'center', 
+    alignItems: 'center'
+  }
 });
