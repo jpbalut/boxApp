@@ -73,7 +73,7 @@ const TabsNavigator = () => {
           ),
         }}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="SettingsTab"
         component={SettingsNavigator}
         options={{
@@ -82,7 +82,7 @@ const TabsNavigator = () => {
             <Ionicons name={focused ? 'settings' : 'settings-outline'} size={size} color={color} />
           ),
         }}
-      />
+      /> */}
     </BottomTab.Navigator>
   );
 };

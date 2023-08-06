@@ -16,4 +16,6 @@ export const styles = StyleSheet.create({
   categoryItemLandscape: {
     height: 100,
   },
+ 
+
 });

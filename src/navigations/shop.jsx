@@ -4,6 +4,7 @@ import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Categories, Products, ProductDetails } from '../screens';
 import { COLORS } from '../themes';
+import SettingsNavigator from './settings';
 
 const Stack = createNativeStackNavigator();
 
@@ -11,12 +12,17 @@ function ShopNavigator() {
   return (
     <Stack.Navigator
       initialRouteName="Categories"
-      screenOptions={{
+      screenOptions={({navigation}) => ({
         headerStyle: { backgroundColor: COLORS.primary, height: 80 },
         headerTitleStyle: { fontFamily: 'Inter-Bold', fontSize: 16 },
         headerTintColor: COLORS.white,
         animation: 'fade_from_bottom',
-      }}>
+        headerRight: ()=>(
+          <TouchableOpacity style={styles.icon} onPress={()=>navigation.navigate("SettingsStack")}>
+            <Ionicons name='settings-outline' size={24} color = {COLORS.white}/>
+          </TouchableOpacity>
+        )
+      })}>
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen
         name="Products"
@@ -46,6 +52,13 @@ function ShopNavigator() {
             </TouchableOpacity>
           ),
           title: route.params.name,
+        })}
+      />
+      <Stack.Screen
+        name="SettingsStack"
+        component={SettingsNavigator}
+        options={({ navigation, route }) => ({
+          headerShown: false,
         })}
       />
     </Stack.Navigator>

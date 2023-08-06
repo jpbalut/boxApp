@@ -1,17 +1,26 @@
 import { FlatList, SafeAreaView, Text, View } from 'react-native';
 
 import { styles } from './styles';
-import { CategoryItem } from '../../components';
-import ORIENTATION from '../../constants/data/orientation';
-import useOrientation from '../../hooks/useOrientation';
+import { useGetOrdersQuery } from '../../store/orders/api';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { OrderItem } from '../../components';
 
-function Training({ navigation }) {
-  const orientation = useOrientation();
+function Training() {
+  const {data, error, isLoading} = useGetOrdersQuery()
+  console.warn('aaa', {data, error, isLoading})
+
+  const renderItem = ({item}) => (<OrderItem {...item}/>)
+  
+  const keyExtractor = (item) => item.id.toString()
 
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Text>TO DO TRAINING SCREEN</Text>
+        <FlatList
+          data = {data}
+          renderItem={renderItem}
+          keyExtractor={keyExtractor}
+        />
       </View>
     </SafeAreaView>
   );
