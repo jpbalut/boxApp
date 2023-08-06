@@ -4,7 +4,8 @@ export const COLORS = {
   third:'#005E7C',
   text: '#FFFFFF',
   background: '#F2F0FA', 
-  grey: "#3C474B",
+  gray: "#3C474B",
   black: '#000000',
   white: '#FFFFFF',
+  error: '#E23428',
 };
