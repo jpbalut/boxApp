@@ -1,6 +1,5 @@
 import { useReducer, useState } from "react"
-import { View, Text } from "react-native"
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { View, Text,TouchableOpacity } from "react-native"
 import { useDispatch } from "react-redux";
 import { InputForm } from "../../components";
 import { useSignInMutation, useSignUpMutation } from "../../store/auth/api";
@@ -53,7 +52,6 @@ const Auth = () => {
         try {
             if(isLogin){
                 const result = await signIn({email: formState.email.value, password: formState.password.value})
-                
                 if(result?.data) {
                     console.log(result.data)
                     dispatch(setUser(result.data))}
